@@ -1,4 +1,5 @@
 from datetime import datetime
+from dateutil.relativedelta import relativedelta
 import regex as re
 from itertools import chain
 import os
@@ -107,7 +108,6 @@ def filter_by_words_bsearch(word_tokens, word_list_sorted):
   filtered_tokens = list(filter(lambda x: bsearch_string(x, word_list_sorted) == -1, word_tokens))
   return filtered_tokens     
 
-
   
 ###########################
 ### NLP Helper functions
@@ -131,3 +131,60 @@ class numKeyValuePair:
   def __init__(self, numKey, numValue):
     key = numKey
     value = numValue    
+
+
+
+###########################
+### Data Convert Utility Helper functions
+###########################
+
+def ensureIsString(input, autoTrim = True):
+  if input is None:
+    return ""
+  elif isinstance(input, str) == False:
+    input = str(input)
+
+  if autoTrim:
+    input = input.strip()
+
+  return input      
+
+
+def getStartOfMonth(inputDateStr, dateFormat="%d/%m/%Y"):
+  if inputDateStr is None:
+    inputDate = datetime.now
+  else:
+    inputDate = datetime.strptime(inputDateStr, format=dateFormat)
+  return datetime(inputDate.year, inputDate.month, 1)   
+
+
+def getEndOfMonth(inputDate=None):
+  if inputDate is None:
+    inputDate = datetime.now
+  endOfMonth = datetime(inputDate.year, inputDate.month, 1) + relativedelta(months=1) - relativedelta(seconds=1)
+  return endOfMonth
+
+  
+def getStartOfNextMonth(inputDate=None):
+  if inputDate is None:
+    inputDate = datetime.now
+  return datetime(inputDate.year, inputDate.month, 1) + relativedelta(months=1)
+
+
+def getEndOfLastMonth(inputDate=None):
+  if inputDate is None:
+    inputDate = datetime.now
+  endOfMonth = datetime(inputDate.year, inputDate.month, 1) - relativedelta(seconds=1)
+  return endOfMonth  
+
+
+def getStartOfDay(inputDate=None):
+  if inputDate is None:
+    inputDate = datetime.now
+  return datetime(inputDate.year, inputDate.month, inputDate.day, 0, 0, 0)   
+
+
+def getEndOfDay(inputDate=None):
+  if inputDate is None:
+    inputDate = datetime.now
+  return datetime(inputDate.year, inputDate.month, inputDate.day, 23, 59, 59)     
