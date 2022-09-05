@@ -28,10 +28,10 @@ def convertBoolColToInt(dfInput, columnName):
 
 # This converts a YMD column into 3 separate int columns for year, month, day. If the input is a string, attempts
 # to convert it to a date, or, you can use the parse_dates=[columnName] argument when you do your original read_csv()
-def separateYmdCol(dfInput, columnName, dropOriginalCol=True):
+def separateYmdCol(dfInput, columnName, dropOriginalCol=True, dateFormat="%d/%m/%y"):
     # If the input is a string type, first convert to a date
     if dfInput[columnName].dtype == "object":
-        dfInput[columnName] = pd.to_datetime(dfInput[columnName])
+        dfInput[columnName] = pd.to_datetime(dfInput[columnName], format=dateFormat)
     
     dfInput[columnName+"_year"] = dfInput[columnName].dt.year
     dfInput[columnName+"_month"] = dfInput[columnName].dt.month
