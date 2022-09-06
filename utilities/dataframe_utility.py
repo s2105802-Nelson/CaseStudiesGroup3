@@ -13,6 +13,11 @@ def getFeaturesWithoutCols(df1, listColsToExclude):
 
 
 def convertBoolColToIntHelper(input):
+  if isinstance(input, bool):
+    if input:
+      return 1
+    else:
+      return 0      
   if input is None or input.strip() == "":
     return 0
   inputLower = input.lower().strip()
