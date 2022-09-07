@@ -76,6 +76,7 @@ def padStringToLength(input, padChar, length):
     return input
       
 
+
 ###########################
 ### Binary Word Search functions
 ###########################
