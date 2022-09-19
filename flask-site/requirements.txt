@@ -1,0 +1,6 @@
+numpy==1.19.5
+pandas==1.2.4
+regex==2021.8.28
+Jinja2==3.0.1
+Flask==2.0.1
+Werkzeug==2.0.1

@@ -1,0 +1,424 @@
+
+.container .row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+// use this to indent a col properly (like on the footer and the top nav logo)
+.col-indent-left {
+    padding-left: 15px;
+}
+
+/* START GENERIC CONTENT STYLES */
+// use this with height
+.row.row-flex {
+    // Set the flex settings like row-flex to make vert centering in row possible
+    display: flex;
+    flex-wrap: wrap;
+    // this should make the col the height of the row, for vertical alignment to be possible
+    .row-col-flex {
+        height: inherit;
+    }
+}
+
+.font-normal { font-size:1em }
+.font-small { font-size:0.9em }
+.font-small2 { font-size:0.8em }
+.font-small3 { font-size:0.7em }
+.font-large { font-size:1.2em }
+.font-large2 { font-size:1.35em }
+.font-large3 { font-size:1.5em }
+
+
+div.img-circle img,
+img.img-circle {
+    border-radius: 50%;
+}
+
+.full-width,
+div.full-width img,
+img.full-width {
+    width: 100%;
+}
+
+.full-height,
+div.full-height img,
+img.full-height {
+    height: 100%;
+}
+/* END GENERIC CONTENT STYLES */
+
+
+/* Start Styles for Arrows on Divs */
+// Default Arrow Classes. The intention of these is that client specific structure classes will overwrite them with the default arrow colors and default arrow sizes
+// But here is set to 16px as the default size
+.arrow-down {
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        height: 0px;
+        width: 0px;
+        left: calc(50% - 16px);
+        top: 100%;
+        border-width: 16px;
+        border-color: #666 transparent transparent transparent;
+        border-style: solid;
+    }
+}
+
+.arrow-left {
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        height: 0px;
+        width: 0px;
+        left: calc(-16px * 2);
+        top: calc(50% - 16px);
+        border-width: 16px;
+        border-color: transparent #666 transparent transparent;
+        border-style: solid;
+    }
+}
+
+.arrow-right {
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        height: 0px;
+        width: 0px;
+        left: 100%;
+        top: calc(50% - 16px);
+        border-width: 16px;
+        border-color: transparent transparent transparent #666;
+        border-style: solid;
+    }
+}
+
+.arrow-top {
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        height: 0px;
+        width: 0px;
+        left: calc(50% - 16px);
+        top: calc(-16px * 2);
+        border-width: 16px;
+        border-color: transparent transparent #666 transparent;
+        border-style: solid;
+    }
+}
+// Rather than a solid triangle type arrow, these are pointer type of arrows, like this:
+// https://www.w3schools.com/howto/howto_css_arrows.asp
+.arrow-up-unfilled,
+.arrow-down-unfilled,
+.arrow-left-unfilled,
+.arrow-right-unfilled {
+    border: solid #666;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 4px;
+}
+
+.arrow-up-unfilled {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.arrow-down-unfilled {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.arrow-left-unfilled {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.arrow-right-unfilled {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+/* End Styles for Arrows on Divs */
+
+/* Start Standard Text and Layout Modifiers */
+.vert-align-top {
+    vertical-align:top;
+}
+
+.vert-align-middle {
+    vertical-align:middel;
+}
+
+.vert-align-bottom {
+    vertical-align:bottom;
+}
+
+.text-align-left {
+    text-align: left !important;
+}
+
+.text-align-right {
+    text-align: right !important;
+}
+
+.text-align-center, .text-align-centre {
+    text-align: center !important;
+}
+
+.center-content, .centre-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.center-content-horizontal, .centre-content-horizontal {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.center-content-vertical, .centre-content-vertical {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.center-content-flex, .centre-content-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-wrap-horizontal {
+    flex-wrap: wrap;
+}
+
+.center-content-horizontal-flex, .centre-content-horizontal-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.center-content-vertical-flex, .centre-content-vertical-flex {
+    display: flex;
+    align-items: center;
+}
+
+
+// centering for SM
+@media (min-width: 768px) and (max-width: 992px) {
+    .vert-align-top-sm {
+        vertical-align:top;
+    }
+    
+    .vert-align-middle-sm {
+        vertical-align:middel;
+    }
+    
+    .vert-align-bottom-sm {
+        vertical-align:bottom;
+    }
+    
+    .text-align-left-sm {
+        text-align: left !important;
+    }
+    
+    .text-align-right-sm {
+        text-align: right !important;
+    }
+    
+    .text-align-center-sm, .text-align-centre-sm {
+        text-align: center !important;
+    }
+    
+    .center-content-sm, .centre-content-sm {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    
+    .center-content-horizontal-sm, .centre-content-horizontal-sm {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .center-content-vertical, .centre-content-vertical-sm {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .center-content-flex-sm, .centre-content-flex-sm {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .flex-wrap-horizontal-sm {
+        flex-wrap: wrap;
+    }
+    
+    .center-content-horizontal-flex-sm, .centre-content-horizontal-flex-sm {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .center-content-vertical-flex-sm, .centre-content-vertical-flex-sm {
+        display: flex;
+        align-items: center;
+    }    
+}
+
+// centering for XS
+@media (max-width: 768px) {
+    .vert-align-top-xs {
+        vertical-align:top;
+    }
+    
+    .vert-align-middle-xs {
+        vertical-align:middel;
+    }
+    
+    .vert-align-bottom-xs {
+        vertical-align:bottom;
+    }
+    
+    .text-align-left-xs {
+        text-align: left !important;
+    }
+    
+    .text-align-right-xs {
+        text-align: right !important;
+    }
+    
+    .text-align-center-xs, .text-align-centre-xs {
+        text-align: center !important;
+    }
+    
+    .center-content-xs, .centre-content-xs {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    
+    .center-content-horizontal-xs, .centre-content-horizontal-xs {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .center-content-vertical, .centre-content-vertical-xs {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .center-content-flex-xs, .centre-content-flex-xs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .flex-wrap-horizontal-xs {
+        flex-wrap: wrap;
+    }
+    
+    .center-content-horizontal-flex-xs, .centre-content-horizontal-flex-xs {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .center-content-vertical-flex-xs, .centre-content-vertical-flex-xs {
+        display: flex;
+        align-items: center;
+    }   
+}
+
+.clear-both {
+    clear: both;
+}
+
+.clear-none {
+    clear: none;
+}
+
+.clear-left {
+    clear: left;
+}
+
+.clear-right {
+    clear: right;
+}
+
+.rounded-corners-xs {
+    border-radius: 4px;
+}
+
+.rounded-corners-sm {
+    border-radius: 8px;
+}
+
+.rounded-corners-md {
+    border-radius: 12px;
+}
+
+.rounded-corners-lg {
+    border-radius: 20px;
+}
+
+.to-uppercase {
+    text-transform: uppercase;
+}
+
+.test-border {
+    border: solid 2px red;
+}
+
+.test-border-white {
+    border: solid 2px white;
+}
+
+.test-border-black {
+    border: solid 2px black;
+}
+
+.test-border-blue {
+    border: solid 2px blue;
+}
+
+.test-border-green {
+    border: solid 2px green;
+}
+
+.hide-item {
+    display: none !important;
+}
+/* End Standard Text and Layout Modifiers */
+
+
+
+/*
+START Common standard Bootstrap styles
+*/
+.container .row
+{
+    // Any images flagged as a col-image in a bootstrap grid, size to the column by default
+    img.col-image {
+        width:100%;
+    }
+}
+
+/*
+END Common standard Bootstrap styles
+*/

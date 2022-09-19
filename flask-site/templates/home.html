@@ -1,0 +1,57 @@
+{% extends "layouts/layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<div class="container-internal">
+
+  <div class="row">
+    <div class="col-md-12">
+      <img class="content-map" src="{{ url_for('static',filename='images/background-img-temp.jpg') }}" >
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}
+
+{% block controls %}
+<div class="container-internal">
+
+  <div class="row search-bar-top">
+    <div class="col-md-offset-5 col-sm-offset-5 col-xs-offset-5 col-md-2 col-sm-2 col-xs-2">
+      <hr class="iphone-bar-top" />
+    </div>
+  </div>
+
+  <form action="/location" method="POST"> 
+    <div class="row search-bar">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <select id="ddlSearchLocation" name="ddlSearchLocation" class="ddlSearchInput">
+          <option value="bourke" selected="true">Bourke Street</option>
+          <option value="southbank">Southbank</option>
+        </select> 
+      </div>
+    </div>
+    
+    <div class="row search-btns">
+      <div class="col-md-4 col-sm-4 col-xs-4 button-cell">
+        <input type="submit" id="btnToday" name="btnToday" class="btn btn-primary" value="TODAY" />
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-4 button-cell">
+        <input type="submit" id="btnTomorrow" name="btnTomorrow" class="btn btn-primary" value="TOMORROW" />
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-4 button-cell">
+        <input type="submit" id="btnThisWeek" name="btnThisWeek" class="btn btn-primary" value="THIS WEEK" />
+      </div>
+    </div>                     
+  </form>
+
+
+</div>
+
+
+{% endblock %}

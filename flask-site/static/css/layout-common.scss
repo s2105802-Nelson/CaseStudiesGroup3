@@ -1,0 +1,98 @@
+@import "values-common.scss";
+
+
+body {
+    background-color:$color-background-map;
+}
+
+
+.body-content {
+    padding: 5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top:12px;
+    margin-bottom:12px;
+
+    img.content-map
+    {
+        width:100%;
+    }
+}
+
+.body-controls {
+    min-height:400px;
+    padding: 5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:$color-background;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+
+    margin-top:12px;
+    margin-bottom:12px;
+
+    .search-bar, .search-btns 
+    {
+        margin-top:24px;
+        margin-bottom:24px;
+    }
+    .search-bar-top
+    {
+        margin-top:4px;
+        margin-bottom:4px;
+        .iphone-bar-top {
+            background-color: $color-buttons2-back;
+            height:6px;
+            margin-top:0px;
+        }        
+    }    
+}
+
+.row {
+    padding-top:8px;
+}
+
+input.btn, a.btn {
+    background-color: $color-buttons-back;
+    color: $color-buttons-text;
+    padding-left:24px;
+    padding-right:24px;
+    border-radius: 4px;
+
+    &.btn-primary, &.btn-secondary {
+        width:100%;
+    }
+    &.btn-secondary {
+        background-color: $color-buttons2-back;
+        color: $color-buttons2-text;
+    }
+}
+
+.ddlSearchInput {
+    width:100%;
+    padding:18px;
+}
+
+
+
+// When working with a big block of text and want headings, tables etc to format well when embedded within text,
+// wrap the whole text block in a "text-page" class div
+.text-page
+{
+    h1, h2, h3
+    {
+        padding-top:15px;
+    }
+
+    table, th, td 
+    {
+        border: 1px solid $color-text;
+        border-collapse: collapse;
+        margin-bottom:15px
+    }
+
+    table
+    {
+        th, td {
+            padding:4px;
+        }   
+    }
+}
