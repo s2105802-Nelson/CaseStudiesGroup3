@@ -1,0 +1,82 @@
+body {
+  background-color: #000;
+}
+
+.body-content {
+  padding: 5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.body-content img.content-map {
+  width: 100%;
+}
+
+.body-controls {
+  min-height: 400px;
+  padding: 5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #F7F5F7;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.body-controls .search-bar, .body-controls .search-btns {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.body-controls .search-bar-top {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.body-controls .search-bar-top .iphone-bar-top {
+  background-color: #F1F0F1;
+  height: 6px;
+  margin-top: 0px;
+}
+
+.row {
+  padding-top: 8px;
+}
+
+input.btn, a.btn {
+  background-color: #1A2130;
+  color: #F7F5F7;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-radius: 4px;
+}
+
+input.btn.btn-primary, input.btn.btn-secondary, a.btn.btn-primary, a.btn.btn-secondary {
+  width: 100%;
+}
+
+input.btn.btn-secondary, a.btn.btn-secondary {
+  background-color: #F1F0F1;
+  color: #1A2130;
+}
+
+.ddlSearchInput {
+  width: 100%;
+  padding: 18px;
+}
+
+.text-page h1, .text-page h2, .text-page h3 {
+  padding-top: 15px;
+}
+
+.text-page table, .text-page th, .text-page td {
+  border: 1px solid #1A2130;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.text-page table th, .text-page table td {
+  padding: 4px;
+}
+/*# sourceMappingURL=layout-common.css.map */

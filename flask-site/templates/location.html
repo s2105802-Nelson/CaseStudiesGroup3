@@ -1,0 +1,56 @@
+{% extends "layouts/layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<div class="container-internal">
+
+  <div class="row">
+    <div class="col-md-12">
+      <img class="content-map" src="{{ url_for('static',filename='images/' + location.locationMapImg) }}" >
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}
+
+{% block controls %}
+<div class="container-internal">
+
+  <div class="row search-bar-top">
+    <div class="col-md-offset-5 col-sm-offset-5 col-xs-offset-5 col-md-2 col-sm-2 col-xs-2">
+      <hr class="iphone-bar-top" />
+    </div>
+  </div>
+
+  <div class="row search-bar">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <select id="ddlSearchLocation" name="ddlSearchLocation" class="ddlSearchInput">
+        <option value="bourke" selected="true">Bourke Street</option>
+        <option value="southbank">Southbank</option>
+      </select> 
+    </div>
+  </div>
+</div>
+  
+<div class="container-internal">
+  <div class="row">
+    <div class="col-md-12 col-xs-12">
+      <h1>{{ location.locationName }</h1>
+      <strong>{{ location.locationAddress }}</strong>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 col-xs-12">
+      <img class="img-busyness" src="{{ url_for('static',filename='images/'+location.busynessImg) }}" >
+    </div>
+  </div>  
+</div>
+
+
+{% endblock %}
