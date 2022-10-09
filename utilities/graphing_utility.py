@@ -140,19 +140,27 @@ def getTrainSizesForLearningCurve(dfInput, testSize=0.2, propSplitsOnTrainSize =
   return train_sizes
 
 
-def graphLearningCurve(train_sizes, train_errors_mean, validation_errors_mean):
+def graphLearningCurve(train_sizes, train_errors_mean, validation_errors_mean, model_name = ""):
     # Use the max error from the splits as the limit of the Y Axis
     maxY = validation_errors_mean.max()
     if train_errors_mean.max() > maxY:
         # This shouldn't happen 
         maxY = train_errors_mean.max() 
 
+    if model_name == "":
+        model_name = "a regression model"
+
+    scores_diff = validation_errors_mean - train_errors_mean
+    min_error_diff = min(list(filter(lambda x: x > 0, scores_diff)))
+    print(scores_diff)
+    print("Min Gap (Difference in error between Training and Validation): " + str(min_error_diff))        
+
     plt.style.use('seaborn')
     plt.plot(train_sizes, train_errors_mean, label = 'Training error')
     plt.plot(train_sizes, validation_errors_mean, label = 'Validation error')
     plt.ylabel('MSE', fontsize = 14)
     plt.xlabel('Training set size', fontsize = 14)
-    plt.title('Learning curves for a regression model', fontsize = 18, y = 1.03)
+    plt.title('Learning curve for ' + model_name, fontsize = 18, y = 1.03)
     plt.legend()
     plt.ylim(0,maxY)
     return plt
