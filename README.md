@@ -8,7 +8,7 @@ This repository contains Python Notebooks on the data analysis and research for 
 
 ### Project Information
 
-For full explanation of the purpose of this project and the modelling, a full version of the related Project Report, **CaseStudiesGroup3.FinalReport.pfd** is included in the root of the repository.
+For full explanation of the purpose of this project and the modelling, a full version of the related Project Report, **CaseStudiesGroup3.FinalReport.pdf** is included in the root of the repository.
 
 ### Aim of the Project Modelling
 
@@ -21,7 +21,7 @@ In order to do this, data spanning from January 2013 to July 2022 was sourced th
 
 ### Data
 
-For modelling of Foot Traffic numbers, a number of separate data sources were found and used. For a full explanation of the data sourced and the original locations of the data, see the Data section of **CaseStudiesGroup3.FinalReport.pfd**.
+For modelling of Foot Traffic numbers, a number of separate data sources were found and used. For a full explanation of the data sourced and the original locations of the data, see the Data section of **CaseStudiesGroup3.FinalReport.pdf**.
 
 The source data files, along with other data files downloaded and analysed, are all stored in the **/data_files_raw/** directory. As such, not all files in this directory were used.
 
